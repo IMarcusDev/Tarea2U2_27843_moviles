@@ -2,18 +2,15 @@ import 'package:tarea2u2_app/src/data/datasources/gyroscope_data_source.dart';
 import 'package:tarea2u2_app/src/domain/entities/position.dart';
 import 'package:tarea2u2_app/src/domain/repositories/position_repository.dart';
 
-class PositionRepositoryImpl extends PositionRepository {
-  GyroscopeDataSource datasource = GyroscopeDataSource();
+
+class PositionRepositoryImpl implements PositionRepository {
+  final GyroscopeDataSource _datasource = GyroscopeDataSource();
 
   @override
-  Position? getPosition() {
-    return datasource.getPosition();
-  }
-
-  Stream<Position> get positionStream => datasource.positionStream;
+  Stream<DrivingState> get drivingStream => _datasource.stream;
 
   @override
   void cancelSubscriptions() {
-    datasource.dispose();
+    _datasource.dispose();
   }
 }

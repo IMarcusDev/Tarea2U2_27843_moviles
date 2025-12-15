@@ -1,18 +1,9 @@
-import 'package:sensors_plus/sensors_plus.dart';
 import 'package:tarea2u2_app/src/domain/entities/position.dart';
 
-class PositionModel extends Position {
+class PositionModel extends DrivingState {
+  
   PositionModel({
-    required super.X,
-    required super.Y,
-    required super.Z,
+    required super.steeringDelta,
+    required super.throttleTilt,
   });
-
-  factory PositionModel.fromEvent(GyroscopeEvent event) {
-    return PositionModel(
-      X: event.x,
-      Y: event.y,
-      Z: event.z,
-    );
-  }
 }

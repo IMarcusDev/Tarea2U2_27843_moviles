@@ -1,11 +1,9 @@
-class Position {
-  final double X;
-  final double Y;
-  final double Z;
+class DrivingState {
+  final double steeringDelta;
+  final double throttleTilt; 
 
-  Position({
-    required this.X,
-    required this.Y,
-    required this.Z,
+  DrivingState({
+    required this.steeringDelta,
+    required this.throttleTilt,
   });
 }
